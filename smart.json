@@ -1,0 +1,7 @@
+{
+    "packages": {
+    	"jeizinen": {
+    		"git": "https://github.com/RolandStuder/jeizinen-meteor.git"
+    	}
+    }
+  }

@@ -1,0 +1,46 @@
+<template name="navigation">
+	{{> header}}
+	<h2>Let me present you some very nice content</h2>
+	{{> lorem}}
+
+</template>
+
+<template name="withSubnavigation ">
+	{{> header}}
+	{{> subNavigation}}
+	<h4>Some more content</h4>
+	{{> lorem}}
+	{{> lorem}}
+
+</template>
+
+<template name="anotherSubPage">
+	{{> header}}
+	{{> subNavigation}}
+	<h4>This a nice subpage</h4>
+	{{> lorem}}
+	{{> lorem}}
+	{{> lorem}}
+
+</template>
+
+
+<template name="header">
+	<h1>Navigation example</h1>
+	<div>
+		<ul class="nav nav-tabs">
+			<li><a href="navigation">A simple Page</a></li>
+			<li><a href="withSubnavigation">See some subnavigation</a></li>
+		</ul>
+	</div>
+</template>
+
+<template name="subNavigation">
+	<h2>A subnavigation works too!</h2>
+
+	<div>
+		<a href="withSubnavigation.withSubnavigation">This page here</a> |
+		<a href="withSubnavigation.anotherSubPage">a Subpage</a>
+	</div>	
+</template>
+
