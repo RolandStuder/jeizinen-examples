@@ -1,0 +1,36 @@
+<template name="inlineForms">
+	<h1>My Contacts</h1>
+
+	{{#collection name="people" create="10"}}
+		<div class="well">
+			{{#if isEdit}}
+				{{> contactsEdit}}
+			{{else}}
+				{{> contactsShow}}
+			{{/if}}
+		</div>
+	{{/collection}}
+
+</template>
+
+
+<template name="contactsShow">
+	<a data-toggle-boolean="isEdit" class="pull-right">Edit</a>
+	<h2 class="h4">
+		{{field name="name" random="name"}}
+		<small class="text-muted">
+			{{field name="category" pick="Friends,Family,Business"}}
+		</small>
+	</h2>
+	<div>
+		{{field name="phone" random="phoneNumber"}} 
+	</div>
+</template>
+
+<template name="contactsEdit">
+	<form>
+		<input name="name" value="{{name}}">
+		<input type="submit" value="Save" data-toggle-boolean="isEdit" >
+	</form>
+
+</template>

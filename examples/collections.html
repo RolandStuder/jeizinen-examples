@@ -1,0 +1,35 @@
+<template name="collections">
+	<h1>Contacts</h1>
+	<hr>
+	<div class="row">
+		<div class="col-sm-4">
+			Search
+			<input {{liveSearch collection="people" field="name,category,phone"}} class="input">
+		</div>
+		
+		<div class="col-sm-8">
+			Category
+			<a {{filter collection="people" field="category" value=""}}>All</a> |
+			<a {{filter collection="people" field="category" value="Friends"}}>Friends</a> |
+			<a {{filter collection="people" field="category" value="Family"}}>Family</a> |
+			<a {{filter collection="people" field="category" value="Business"}}>Business</a>
+		</div>
+	</div>
+
+	<hr>
+
+	{{#collection name="people" create="100" sort="name"}}
+		<div class="well">
+			<h2 class="h4">
+				{{field name="name" random="name"}}
+				<small class="text-muted">
+					<img data-search="headshot">
+					{{field name="category" pick="Friends,Family,Business"}}
+				</small>
+			</h2>
+			<div>
+				{{field name="phone" random="phoneNumber"}} 
+			</div>
+		</div>
+	{{/collection}}
+</template>

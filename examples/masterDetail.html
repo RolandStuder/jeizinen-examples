@@ -1,0 +1,16 @@
+<template name="masterDetail">
+<h1>Master</h1>
+	{{#collection name="conversations" create=3}}
+		<hr>
+		<a href="detail">{{field name="title" pick="Something,Entirely,Completely,Different"}}</a>
+	{{/collection}}
+</template>
+
+<template name="detail">
+	<a href="masterDetail">back</a>
+	<hr>
+	{{#document collection="conversations"}}
+		<h2>{{field name="title"}}</h2>
+		<p>{{field name="name" random="name"}}</p>
+	{{/document}}
+</template>

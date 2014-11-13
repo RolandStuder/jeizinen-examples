@@ -1,0 +1,30 @@
+<template name="indexDetail">
+	<h1>Master / Detailview</h1>
+	<div class="row">
+		<div class="col-sm-4">
+			<ul class="nav nav-stacked nav-pills">
+				{{#collection name="people" create="10"}}
+					<li><a>{{field name="name" random="name"}} </a></li>
+				{{/collection}}
+			</ul>
+		</div>
+		<div class="col-sm-8">
+			<div class="well">
+				{{#document collection="people"}}
+					<h2>{{name}}</h2>
+					<p>
+						{{field name="phone" random="phoneNumber"}}<br>
+						{{field name="mobile" random="phoneNumber"}}<br>
+						{{field name="office" random="phoneNumber"}}
+					</p>
+					<form>
+						<textarea name="notes" value="{{notes}}">
+							
+						</textarea>
+						<input type="submit">
+					</form>
+				{{/document}}
+			</div>
+		</div>
+	</div>
+</template>

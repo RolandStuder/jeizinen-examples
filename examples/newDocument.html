@@ -1,0 +1,16 @@
+<template name="newDocument">
+	<h1>My Readinglist</h1>
+
+	<form data-collection="books">
+		<input placeholder="title" name="title">
+		<input placeholder="author" name="author">
+		<input type="submit" value="Add book" class="btn btn-success">
+	</form>
+
+	<hr>
+
+	{{#collection name="books" sort="title"}}
+		<h2 class="h4">{{title}} <small>{{author}}</small></h2>
+		<hr>
+	{{/collection}}
+</template>
